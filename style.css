@@ -1,3 +1,9 @@
+:root {
+  --side-bar-background-color: rgb(25, 146, 212);
+  --side-bar-font-color: white;
+}
+
+
 .container {
   display: grid;
   width: 100vw;
@@ -5,9 +11,7 @@
   position: absolute;
   top: 0px;
   left: 0px;
-  /* grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr; */
-  grid-template-columns: clamp(100px, 15%, 250px) auto;
+  grid-template-columns: minmax(200px, 250px) auto;
   grid-template-rows: clamp(150px, 20%, 200px) auto;
   grid-template-areas: 
     "side top"
@@ -16,9 +20,9 @@
 
 .side-bar {
   grid-area: side;
-  background: blue;
+  background: var(--side-bar-background-color);
   display: grid;
-  grid-template-rows: 10% 40% auto;
+  grid-template-rows: minmax(min-content, 80px) minmax(min-content, 300px) auto;
   grid-template-areas:
     "side-title"
     "side-apps"
@@ -33,19 +37,62 @@
 .main-content {
   grid-area: main;
   background: green;
+
+}
+
+.side-bar > div {
+  display: flex;
+  flex-direction: column;
 }
 
 .side-bar-title {
   grid-area: side-title;
-  background: yellow;
+  justify-content: center;
 }
 
 .side-bar-apps {
   grid-area: side-apps;
-  background: cyan;
+  justify-content: center;
 }
 
 .side-bar-settings {
   grid-area: side-settings;
-  background: magenta;
+  justify-content: flex-start;
+}
+
+.label-group {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 2.5rem;
+  grid-auto-rows: 2.5rem;
+  grid-template-areas: 
+    "side-icon side-label";
+  color: var(--side-bar-font-color);
+  align-items: center;
+}
+
+.icon {
+  grid-area: side-icon;
+  justify-self: center;
+  /* height: 2rem; */
+}
+
+.label {
+  font-size: 1.15rem;
+  font-weight: bold;
+  color: var(--side-bar-font-color);
+  text-decoration: none;
+}
+
+.label:hover {
+  text-decoration: underline;
+}
+
+.side-bar-title > div > .label {
+  font-size: 1.5rem;
+  text-decoration: none;
+}
+
+.side-bar-title > div > img {
+  /* height: 40px; */
 }
