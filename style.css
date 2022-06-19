@@ -17,6 +17,12 @@
 .side-bar {
   grid-area: side;
   background: blue;
+  display: grid;
+  grid-template-rows: 10% 40% auto;
+  grid-template-areas:
+    "side-title"
+    "side-apps"
+    "side-settings";
 }
 
 .top-bar {
@@ -27,4 +33,19 @@
 .main-content {
   grid-area: main;
   background: green;
+}
+
+.side-bar-title {
+  grid-area: side-title;
+  background: yellow;
+}
+
+.side-bar-apps {
+  grid-area: side-apps;
+  background: cyan;
+}
+
+.side-bar-settings {
+  grid-area: side-settings;
+  background: magenta;
 }
