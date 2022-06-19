@@ -1,0 +1,30 @@
+.container {
+  display: grid;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  /* grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr; */
+  grid-template-columns: clamp(100px, 15%, 250px) auto;
+  grid-template-rows: clamp(150px, 20%, 200px) auto;
+  grid-template-areas: 
+    "side top"
+    "side main";
+}
+
+.side-bar {
+  grid-area: side;
+  background: blue;
+}
+
+.top-bar {
+  grid-area: top;
+  background: red;
+}
+
+.main-content {
+  grid-area: main;
+  background: green;
+}
