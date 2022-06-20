@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dashboard</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
   <div class="container">
@@ -57,7 +58,20 @@
         </div>
       </div>
     </div>
-    <div class="top-bar"></div>
+    <div class="top-bar">
+      <div class="top-bar-nav">
+        <form action="#" class="form-search">
+          <input type="text" name="search" id="search">
+          <button type="button"><i class="fa fa-search"></i></button>
+        </form>
+        <div class="notification-group">
+          <button><img src="icons/bell-ring-outline.png" alt="Notifications" class="notification"></button>
+          <img src="icons/profile-picture.png" alt="" class="pf-pic-small">
+          <div class="pf-name-small">John Doe</div>
+        </div>
+      </div>
+      <div class="top-bar-profile"></div>
+    </div>
     <div class="main-content"></div>
   </div>
 </body>

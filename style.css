@@ -1,6 +1,8 @@
 :root {
   --side-bar-background-color: rgb(25, 146, 212);
   --side-bar-font-color: white;
+  --top-bar-background-color: white;
+  --top-bar-accent-color: rgb(226, 232, 240);
 }
 
 
@@ -31,7 +33,13 @@
 
 .top-bar {
   grid-area: top;
-  background: red;
+  background: var(--top-bar-background-color);
+  display: grid;
+  grid-template-columns: auto 90% auto;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: 
+  ". nav ."
+  ". profile .";
 }
 
 .main-content {
@@ -95,4 +103,60 @@
 
 .side-bar-title > div > img {
   /* height: 40px; */
+}
+
+.top-bar-nav, .top-bar-profile {
+  display: flex;
+}
+
+.top-bar-nav {
+  grid-area: nav;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.form-search {
+  width: 70%;
+  display: flex;
+}
+
+#search {
+  display: inline-block;
+  width: 90%;
+  border: 1px solid var(--top-bar-accent-color);
+  border-radius: 10px;
+  background-color: var(--top-bar-accent-color);
+  /* height: fit-content; */
+}
+
+.form-search > button, .notification-group > button {
+  background-color: var(--top-bar-background-color);
+  border: none;
+}
+
+.form-search > button:hover, .notification-group > button:hover {
+  background-color: var(--top-bar-background-color);
+  border: 1px solid var(--top-bar-accent-color);
+}
+
+.form-search > button:active, .notification-group > button:active {
+  background-color: var(--top-bar-accent-color);
+  border: 1px solid var(--top-bar-accent-color);
+}
+
+.notification-group {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.notification {
+  height: 24px;
+}
+
+.pf-pic-small {
+  height: 32px;
+  border-radius: 50%;
+  margin: 0 20px;
+  /* border: 1px solid black; */
 }
